@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLens | AI-Powered Calorie Counter</title>
+    <meta name="description" content="NutriLens uses advanced AI to count calories and identify ingredients from your food pictures.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="hero">
+            <div class="logo">
+                <span class="icon">🥗</span>
+                <h1>NutriLens</h1>
+            </div>
+            <p>Snap. Analyze. Eat Smart.</p>
+        </header>
+
+        <section class="upload-section">
+            <div id="drop-zone" class="drop-zone">
+                <div class="drop-zone-content">
+                    <div class="upload-icon">📸</div>
+                    <h3>Drag & Drop your food photo</h3>
+                    <p>or click to browse files</p>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                </div>
+                <div id="preview-container" class="preview-container hidden">
+                    <img id="image-preview" src="#" alt="Food Preview">
+                    <button id="reset-btn" class="reset-btn">✕</button>
+                </div>
+            </div>
+            
+            <button id="analyze-btn" class="primary-btn hidden">
+                <span class="btn-text">Analyze Nutrition</span>
+                <span class="loader hidden"></span>
+            </button>
+        </section>
+
+        <section id="results-section" class="results-section hidden">
+            <div class="glass-card">
+                <div class="total-calories">
+                    <h2 id="calorie-count">0</h2>
+                    <span>Total Calories</span>
+                </div>
+                
+                <div class="macros-grid">
+                    <div class="macro-card">
+                        <span class="label">Protein</span>
+                        <div class="progress-bar"><div id="protein-bar" class="progress fill-protein"></div></div>
+                        <span id="protein-val" class="value">0g</span>
+                    </div>
+                    <div class="macro-card">
+                        <span class="label">Carbs</span>
+                        <div class="progress-bar"><div id="carbs-bar" class="progress fill-carbs"></div></div>
+                        <span id="carbs-val" class="value">0g</span>
+                    </div>
+                    <div class="macro-card">
+                        <span class="label">Fats</span>
+                        <div class="progress-bar"><div id="fats-bar" class="progress fill-fats"></div></div>
+                        <span id="fats-val" class="value">0g</span>
+                    </div>
+                </div>
+
+                <div class="ingredients-list">
+                    <h3>Ingredient Breakdown</h3>
+                    <ul id="ingredient-items">
+                        <!-- Dynamic items -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <p>NutriLens AI &bull; Version 1.0</p>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+<!-- commit3: final -->
